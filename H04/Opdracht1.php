@@ -28,10 +28,14 @@ else{
 }
 
 }
-echo "<br>".divideBy(7)
+echo "<br>".divideBy(21);
+
+function reverse($string){
+    echo strrev($string);
 
 
-
+}
+echo reverse("Ik ben Terique");
 ?>
 </body>
 </html>
