@@ -43,6 +43,10 @@
         <li><a href="H05/Animalselect.html">Opdracht 3</a> </li>
         <li><a href="H05/Beasties%20Guru.html">Opdracht 4</a> </li>
     </ul>
+    <ul>
+        <h2>Hoofdstuk 6</h2>
+        <li><a href="H06/Cursisten.php">Cursisten</a></li>
+    </ul>
 
 </div>
 </body>
