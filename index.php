@@ -47,6 +47,11 @@
         <h2>Hoofdstuk 6</h2>
         <li><a href="H06/Cursisten.php">Cursisten</a></li>
     </ul>
+    <ul>
+        <h2>Hoofdstuk 7</h2>
+        <li><a href="H07/Login.php">Cookies & Sessions</a></li>
+
+    </ul>
 
 </div>
 </body>
