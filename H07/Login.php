@@ -1,4 +1,5 @@
 <?php
+ session_start();
   $users = array(
       "Terique" => "1234",
       "Joey" => "1235"
@@ -12,10 +13,9 @@
       $message = "Welcome";
   }
   else{
-    $message ="Inloggen";
+    $message ="Fout username or password";
   }
 ?>
-
 
 <!DOCTYPE html>
 <html lang="en">
@@ -30,6 +30,6 @@
     <input type= "password" name="pwd" value="">
     <input type="submit" name="knop" value="login">
 </form>
-<p><a href="H07/website.php">Website</p>
+<p><a href="website.php">Website</p>
 </body>
 </html>
