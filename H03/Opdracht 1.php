@@ -9,8 +9,8 @@
 </head>
 <body>
 <?php
-    for ($i = 0; $i < 10; $i++){
-        echo "<img src='img/dog".$i.".jpg'>";
+    for ($i = 1; $i <=10; $i++){
+        echo "<img src='img/dog". $i .".jpg'>";
     }
 ?>
 </body>
