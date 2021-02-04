@@ -16,6 +16,6 @@ if ($_POST ['adres']== ""){
 };
 
 if ($_POST ['wachtwoord']== ""){
-    echo "Je moet nog een adres invullen";
-    echo "<a href='Formulier.html'>Terug naar formulier</a>";
+    echo "Je moet nog een wachtoord invullen";
+    echo "<a href='Formulier.html'> Terug naar formulier</a>";
 };
