@@ -13,9 +13,9 @@
 
 <?php
 $servername = "localhost";
-$username = "root";
-$password = "";
-$dbname = "phpschool";
+$username = "id13241015_schoolphp";
+$password = "Soloboy2355%xbox";
+$dbname = "id13241015_schoolphp";
 
 try {
     $conn = new PDO("mysql:host=$servername; port=3308; dbname=$dbname", $username, $password);
