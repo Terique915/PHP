@@ -49,6 +49,7 @@
     <ul>
         <h2>Hoofdstuk 6</h2>
         <li><a href="H06/Cursisten.php">Cursisten</a></li>
+        <li><a href="H06/LoginDB.php" >Login met Database</a></li>
     </ul>
     <ul>
         <h2>Hoofdstuk 7</h2>
