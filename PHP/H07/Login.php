@@ -1,30 +1,56 @@
 <?php
- session_start();
-  $users = array(
-     "Terique" => array("pwd" => "1234", "rol" => "Admin"),
-      "Eren" => array("pwd" => "1235", "rol" => "Gebruiker")
 
-  );
 
-  if (isset($_GET["loguit"])){
-      $_SESSION = array();
-      session_destroy();
-  }
+session_start();
+$servername = "localhost";
+$username = "id13241015_schoolphp";
+$password = "Soloboy2355%xbox";
+$dbname = "id13241015_schoolphp";
 
-  if (isset($_POST['knop'])
-      && isset($users[$_POST['username']])
-      && $users[$_POST["username"]]["pwd"]== $_POST['pwd']){
-      $_SESSION["user"] = array("naam"=>$_POST['username'],
-                                "pwd"=> $users[$_POST['username']]['pwd'],
-                                "rol"=>$users[$_POST['username']]['rol']
-       );
-      $message = "Welcome ". $_SESSION["user"]["naam"]. " met de rol ".  $_SESSION["user"]["rol"] ;
-  }
-  else{
-    $message ="Login";
-  }
-  print_r($_SESSION);
+try {
+    $conn = new PDO("mysql:host=$servername; port=3308; dbname=$dbname", $username, $password);
+    // set the PDO error mode to exception
+    $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+    //echo "Connected successfully";
+} catch (PDOException $e) {
+    echo "Connection failed: " . $e->getMessage();
+}
+
+if (isset($_GET["loguit"])) {
+    $_SESSION = array();
+    session_destroy();
+}
+if (isset($_POST['knop'])) {
+    $usernaam = $_POST["usernaam"];
+    $pass = $_POST["pwd"];
+    $query = "SELECT name, level FROM loginrol WHERE name = '$usernaam'AND password = '$pass' ";
+    $Results = $conn->query($query);
+
+    while ($row = $Results->fetch()) {
+        echo $row['name'];echo"  "; echo $row['level'] ;
+
+        if ($usernaam == $row['name'] && $_POST['pwd'] == $pass) {
+            $result =true;
+
+
+        }
+        else{
+            echo "onjuist gegevens";
+        }
+    }
+
+
+
+}
+
+
+
 ?>
+
+
+
+
+
 
 <!DOCTYPE html>
 <html lang="en">
@@ -33,9 +59,9 @@
     <title>Title</title>
 </head>
 <body>
-<h1><?php echo $message; ?></h1>
+<h1></h1>
 <form action="<?php echo  $_SERVER['PHP_SELF'];?>" method="post">
-    <input type="text" name= "username" value="">
+    <input type="text" name= "usernaam" id="usernaam" value="">
     <input type= "password" name="pwd" value="">
     <input type="submit" name="knop" value="login">
 </form>

@@ -1,10 +1,8 @@
 <?php
-
-
 session_start();
-if (! empty($_SESSION["user"] && $_SESSION['user']['rol'] == "Admin")){
-    echo "<h1>Welkom ".$_SESSION["user"]["naam"]. " op de admin website</h1>";
-    echo"<p><a href='Login.php'>login</a></p>";
+if(isset($_SESSION["usernaam"]   )){
+    echo "<h1>Welkom op de admin website</h1>";
+    echo"<p><a href='Login.php'>loguit</a></p>";
 
 }
 else{

@@ -17,24 +17,24 @@ try {
     echo "Connection failed: " . $e->getMessage();
 }
 
-$query ="SELECT email, password FROM logindb WHERE email = '$email' AND  password = '$pass'";
+$query =("SELECT email, password FROM logindb WHERE email = '$email' AND  password = '$pass'");
 $Results= $conn->query($query);
 
 while($row = $Results->fetch()){
     if ($_POST['email']==$email && $_POST['password']== $pass){
         $result = true;
+        break 1;
     }
     else{
         $result = false;
     }
 
 }
-if ($result == true){
+if ($result== true) {
     echo "WELCOME";
 }
 else{
     echo "SORRY, geen toegang";
 }
-
 
 ?>
