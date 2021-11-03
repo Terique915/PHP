@@ -51,9 +51,7 @@ if (isset($_POST['knop'])) {
         } else {
            echo "wrong usernaam of password";
         }
-        if ($_POST['level'] != 'Admin'){
-            echo"You dont have the right credintials";
-        }
+        
 
 
     }
@@ -61,15 +59,6 @@ if (isset($_POST['knop'])) {
 }
 ?>
 
-
-
-
-
-
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
     <title>Title</title>
 </head>
 <body>
