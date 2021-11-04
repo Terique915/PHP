@@ -40,7 +40,7 @@ if (isset($_POST['knop'])) {
         );
         $count = $statement->rowCount();
         if ($count > 0) {
-            echo "log in successful";
+
             if($_POST['level']== 'Admin'){
                  header('location: admin.php');
             }
@@ -48,10 +48,13 @@ if (isset($_POST['knop'])) {
                  header('location: website.php');
             }
 
-        } else {
-           echo "wrong usernaam of password";
+        } else if ($_POST['level']!= 'Admin'){
+            echo "invalid credintials";
         }
-        
+        else{
+            echo "wrong username or password";
+        }
+
 
 
     }
