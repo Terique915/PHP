@@ -23,10 +23,9 @@ if (isset($_POST["loguit"])) {
 if (isset($_POST['knop'])) {
 
 
-    if (empty($_POST['usernaam'] || empty($_POST['pwd']))){
-        echo"full in required fields";
-    }
-    else {
+    if (empty($_POST['usernaam'] || empty($_POST['pwd']))) {
+        echo "full in required fields";
+    } else {
         $query = "SELECT name, level FROM loginrol WHERE name = :name AND password = :password AND level = :level";
         $statement = $conn->prepare($query);
         $statement->execute(
@@ -41,25 +40,27 @@ if (isset($_POST['knop'])) {
         $count = $statement->rowCount();
         if ($count > 0) {
 
-            if($_POST['level']== 'Admin'){
-                 header('location: admin.php');
+            if ($_POST['level'] == 'Admin') {
+                header('location: admin.php');
+            } else {
+                header('location: website.php');
             }
-            else{
-                 header('location: website.php');
-            }
-
-        } else if ($_POST['level']!= 'Admin'){
-            echo "invalid credintials";
         }
-        else{
-            echo "wrong username or password";
+        if ($_POST['usernaam'] <> 'name') {
+            echo "Wrong usernaam";
         }
+        elseif ($_POST['pwd'] <>'password'){
+            echo "Wrong Password";
+;        }
 
 
 
     }
 
+
+
 }
+
 ?>
 
     <title>Title</title>
