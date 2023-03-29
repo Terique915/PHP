@@ -51,7 +51,7 @@ if (isset($_POST['knop'])) {
         }
         elseif ($_POST['pwd'] <>'password'){
             echo "Wrong Password";
-;        }
+       }
 
 
 
