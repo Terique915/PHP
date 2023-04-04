@@ -26,7 +26,11 @@ while($row = $Results->fetch()) {
     if ($_POST['email'] == $email && $_POST['password'] == $pass) {
         $result = true;
         echo "WELCOME";
-        break 1;
+
+    }
+    elseif ($_POST['email']!=$email && $_POST['password'] != $pass){
+        $result= true;
+        echo"sorry geen toegang";
     }
 
 }
