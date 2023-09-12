@@ -24,7 +24,7 @@ if (isset($_POST['knop'])) {
 
 
     if (empty($_POST['usernaam'] || empty($_POST['pwd']))) {
-        echo "full in required fields";
+            echo "full in required fields";
     } else {
         $query = "SELECT name, level FROM loginrol WHERE name = :name AND password = :password AND level = :level";
         $statement = $conn->prepare($query);
